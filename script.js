@@ -530,6 +530,37 @@
         </article>`;
     },
 
+    closing(slide, page) {
+      return `
+        <article class="slide slide--divider" role="group" aria-label="${esc(slide.title)}">
+          <span class="divider__glow" aria-hidden="true"></span>
+          <div class="s-head">
+            <p class="kicker kicker--onDark reveal" style="--i:0">${esc(slide.kicker)}</p>
+            <img class="s-logo" src="${LOGO_LIGHT}" alt="AP Thailand" />
+          </div>
+          <div class="closing">
+            <div class="closing__text">
+              <h1 class="closing__title reveal" style="--i:1">${esc(slide.title)}</h1>
+              <p class="closing__sub reveal" style="--i:2">${esc(slide.sub)}</p>
+              <ul class="dashlist closing__list reveal" style="--i:3">
+                ${slide.gets.map((t) => `<li>${esc(t)}</li>`).join("")}
+              </ul>
+              <p class="closing__url reveal" style="--i:4">${esc(slide.url)}</p>
+            </div>
+            <figure class="qr reveal" style="--i:2">
+              <span class="qr__frame">
+                <img src="${esc(slide.qr)}" alt="QR code ไปยัง ${esc(slide.url)}" />
+              </span>
+              <figcaption class="qr__caption">${esc(slide.qrCaption)}</figcaption>
+            </figure>
+          </div>
+          <div class="s-foot" style="color:var(--muted-3)">
+            <span>${esc(FOOT_LABEL)}</span>
+            <span class="s-foot__page">${pad2(page)}</span>
+          </div>
+        </article>`;
+    },
+
     contacts(slide, page) {
       return `
         <article class="slide" role="group" aria-label="${esc(slide.title)}">

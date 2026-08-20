@@ -955,6 +955,22 @@ window.AP_CLAUDE_DECK = {
           "outcome": "ทีมเห็นของจริง 1 ตัวอย่าง แล้วต่อยอดเป็นของตัวเองได้"
         }
       ]
+    },
+    {
+      "type": "closing",
+      "id": "get-the-deck",
+      "chapter": "ลงมือต่อ",
+      "kicker": "GET THE DECK",
+      "title": "สแกนเอาเดคนี้กลับไปใช้ต่อ",
+      "sub": "เปิดจากมือถือหรือคอมพิวเตอร์ก็ได้ ไม่ต้องล็อกอิน ไม่ต้องติดตั้งอะไร",
+      "gets": [
+        "Prompt template 30 ชุด ทั้ง 6 สายงาน คัดลอกไปวางใน Claude ได้เลย",
+        "คู่มือพร้อมใช้ 4 ขั้น ของสายงานตัวเอง",
+        "สไลด์ทุกหน้า ย้อนดูเองได้ทุกเมื่อ"
+      ],
+      "url": "suphakornp.github.io/ap-claude-training-deck",
+      "qr": "assets/img/qr-deck.svg",
+      "qrCaption": "สแกนด้วยกล้องมือถือ"
     }
   ]
 };

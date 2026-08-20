@@ -686,10 +686,12 @@ body {
   flex: none;
   font-weight: 500;
 }
-.card--dark .dashlist li {
+.card--dark .dashlist li,
+.slide--divider .dashlist li {
   color: var(--white);
 }
-.card--dark .dashlist li::before {
+.card--dark .dashlist li::before,
+.slide--divider .dashlist li::before {
   color: var(--pink-2);
 }
 
@@ -1534,6 +1536,89 @@ body {
 .contact__line b {
   color: var(--ink-2);
   font-weight: 500;
+}
+
+/* =========================================================================
+   Closing slide — QR สำหรับเปิดเดคนี้เอง
+   ========================================================================= */
+
+.closing {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: calc(72 * var(--px) * var(--sp));
+  align-items: center;
+  padding: calc(20 * var(--px) * var(--sp)) var(--pad) calc(20 * var(--px) * var(--sp));
+  position: relative;
+  z-index: 2;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--muted-2) transparent;
+}
+.closing__text {
+  min-width: 0;
+}
+.closing__title {
+  margin: 0;
+  font-size: var(--t-huge);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+.closing__sub {
+  margin: calc(22 * var(--px) * var(--sp)) 0 0;
+  font-size: var(--t-card);
+  color: var(--pink-1);
+  line-height: calc(1.4 * var(--lh));
+}
+.closing__list {
+  margin-top: calc(34 * var(--px) * var(--sp));
+}
+.closing__url {
+  margin: calc(32 * var(--px) * var(--sp)) 0 0;
+  font-size: var(--t-lead);
+  color: var(--pink-2);
+  letter-spacing: 0.01em;
+  word-break: break-all;
+}
+
+/* QR: ผูกขนาดกับ canvas ไม่ผูกกับ font scale — ขยายตัวอักษรแล้ว QR ต้องไม่บวม */
+.qr {
+  margin: 0;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(18 * var(--px));
+}
+.qr__frame {
+  display: block;
+  background: var(--white);
+  border-radius: calc(18 * var(--px));
+  padding: calc(22 * var(--px));
+  box-shadow: 0 calc(16 * var(--px)) calc(48 * var(--px)) rgba(0, 0, 0, 0.4);
+}
+.qr__frame img {
+  display: block;
+  width: calc(400 * var(--px));
+  height: calc(400 * var(--px));
+}
+.qr__caption {
+  font-size: var(--t-sm);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--pink-2);
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .closing {
+    grid-template-columns: 1fr;
+    gap: calc(36 * var(--px));
+  }
 }
 
 /* =========================================================================
