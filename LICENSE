@@ -1,44 +1,46 @@
-MIT License
+Copyright © 2026 AP (Thailand) Public Company Limited
+All rights reserved. สงวนลิขสิทธิ์
 
-Copyright (c) 2026 Suphakorn Palathai
+===============================================================================
+INTERNAL USE ONLY — เอกสารภายในองค์กร ไม่ใช่ซอฟต์แวร์โอเพนซอร์ส
+===============================================================================
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+ซอร์สโค้ด เนื้อหา ฟอนต์ โลโก้ และส่วนประกอบทั้งหมดในที่เก็บนี้ จัดทำขึ้นเพื่อใช้
+ฝึกอบรมพนักงานภายใน AP (Thailand) Public Company Limited และบริษัทในกลุ่มเท่านั้น
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+ไม่มีการอนุญาตให้ใช้สิทธิ์ใดๆ แก่บุคคลภายนอก ไม่ว่าโดยชัดแจ้งหรือโดยปริยาย
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
 
+อนุญาต — เฉพาะพนักงานและผู้รับจ้างของ AP เพื่องานภายในของ AP
 -------------------------------------------------------------------------------
-SCOPE OF THIS LICENSE
+  * เปิดดู นำเสนอ และส่งต่อลิงก์ให้เพื่อนร่วมงานภายใน AP
+  * แก้ไข ต่อยอด และนำเนื้อหาไปใช้กับงานภายในของ AP
+  * ใช้ prompt template และคู่มือในที่เก็บนี้กับงานประจำของตน
+
+
+ไม่อนุญาต
 -------------------------------------------------------------------------------
+  * ทำซ้ำ ดัดแปลง เผยแพร่ต่อ ขาย หรือใช้เชิงพาณิชย์นอก AP
+  * นำฟอนต์ "AP" โลโก้ AP หรือเครื่องหมายการค้าของ AP ไปใช้ในงานอื่น
+  * เปิดเผยเนื้อหาที่อธิบายกระบวนการทำงานภายใน โครงสร้างสายงาน หรือข้อมูล
+    เชิงธุรกิจของ AP ต่อบุคคลภายนอก
 
-The MIT grant above applies ONLY to the source code of this presentation
-engine — that is:
 
-    index.html
-    styles.css
-    script.js
-    scripts/build_deck_data.py
+หมายเหตุเรื่องการเปิดเป็น public repository
+-------------------------------------------------------------------------------
+ที่เก็บนี้ตั้งเป็น public เพื่อให้ GitHub Pages เผยแพร่หน้าเว็บ ให้ผู้เข้าอบรม
+เปิดจากคอมพิวเตอร์หรือมือถือได้สะดวกโดยไม่ต้องล็อกอิน
 
-The following are NOT covered by the MIT License and remain the property of
-their respective owners. All rights reserved. See NOTICE.md for details.
+การที่บุคคลภายนอกมองเห็นที่เก็บนี้ได้ ไม่ถือเป็นการอนุญาตให้ใช้สิทธิ์ใดๆ
+ตามที่ระบุไว้ข้างต้น
 
-  * assets/fonts/AP-*.woff2   — the "AP" corporate typeface
-  * assets/img/ap-logo-*.png  — the AP Thailand logo
-  * content/deck.json, data/deck-data.js, README.md — Thai presentation copy
-    describing AP Thailand brands, business groups and internal ways of working
 
-Do not reuse the typeface, the logo, or the presentation copy in another
-project without written permission from AP (Thailand) Public Company Limited.
+ข้อจำกัดความรับผิด
+-------------------------------------------------------------------------------
+เนื้อหาในที่เก็บนี้เป็นสื่อการอบรมภายใน ไม่ใช่เอกสารทางการของ AP (Thailand)
+Public Company Limited และไม่ใช่เอกสารทางการของ Anthropic
+
+ตัวเลขเวลาที่ปรากฏในสไลด์เป็นค่าประมาณเพื่อสื่อขนาดของผล ไม่ใช่ตัวเลขที่วัดจาก
+งานจริงของ AP ผู้ใช้ต้องตรวจสอบผลลัพธ์ที่ได้จาก AI ทุกครั้งก่อนนำไปใช้ตัดสินใจ
+
+รายละเอียดที่มาของฟอนต์ โลโก้ และเนื้อหา ดูที่ NOTICE.md
