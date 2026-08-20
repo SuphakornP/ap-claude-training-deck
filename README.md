@@ -8,7 +8,10 @@ Design ตาม pattern ของ deck องค์กร AP (`references/Snowf
 
 ## เปิดใช้งาน
 
-เปิด `index.html` ได้โดยตรง หรือรัน local server เพื่อให้ฟอนต์และรูปโหลดครบ:
+**เว็บที่เผยแพร่แล้ว → https://suphakornp.github.io/ap-claude-training-deck/**
+ส่งลิงก์นี้ให้ผู้เข้าอบรมได้เลย เปิดจากคอมพิวเตอร์หรือมือถือก็ได้ ไม่ต้องติดตั้งอะไร
+
+เปิดในเครื่องเอง — เปิด `index.html` ได้โดยตรง หรือรัน local server:
 
 ```bash
 python3 -m http.server 4173
