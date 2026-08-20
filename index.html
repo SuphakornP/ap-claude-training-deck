@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Recap การใช้งาน Claude สำหรับผู้เข้าอบรม AP Thailand — จุดเด่น, Prompt template และคู่มือพร้อมใช้ แยกตามสายงาน"
+    />
+    <meta name="theme-color" content="#131317" />
+    <title>Claude Chat &amp; Cowork — Recap &amp; Prompt Playbook</title>
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="data/deck-data.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#stage">ข้ามไปยังเนื้อหาสไลด์</a>
+
+    <div class="shell" id="shell">
+      <header class="topbar">
+        <button class="wordmark" id="home-button" type="button" aria-label="กลับไปสไลด์แรก">
+          <img src="assets/img/ap-logo-dark.png" alt="" aria-hidden="true" />
+          <span class="wordmark__text">
+            <span class="wordmark__main">CLAUDE CHAT &amp; COWORK</span>
+            <span class="wordmark__sub">RECAP &amp; PROMPT PLAYBOOK</span>
+          </span>
+        </button>
+
+        <div class="topbar__status" aria-live="polite">
+          <span class="chapter" id="chapter-label">เปิดเรื่อง</span>
+          <span class="topbar__rule" aria-hidden="true"></span>
+          <span class="counter" id="slide-counter">01 / 19</span>
+        </div>
+
+        <nav class="topbar__tools" aria-label="เครื่องมือนำเสนอ">
+          <div class="fontscale" role="group" aria-label="ขนาดตัวอักษร">
+            <button class="fontscale__btn" id="font-down" type="button" aria-label="ลดขนาดตัวอักษร" title="ลดขนาดตัวอักษร ( − )">A<span>−</span></button>
+            <button class="fontscale__level" id="font-level" type="button" aria-label="รีเซ็ตขนาดตัวอักษรเป็น 100%" title="รีเซ็ตขนาดตัวอักษร ( 0 )">100%</button>
+            <button class="fontscale__btn" id="font-up" type="button" aria-label="เพิ่มขนาดตัวอักษร" title="เพิ่มขนาดตัวอักษร ( + )">A<span>+</span></button>
+          </div>
+          <button class="tool" id="library-button" type="button" aria-haspopup="dialog">
+            <span class="tool__key">L</span><span>คลัง Prompt</span>
+          </button>
+          <button class="tool" id="toc-button" type="button" aria-haspopup="dialog">
+            <span class="tool__key">O</span><span>สารบัญ</span>
+          </button>
+          <button class="tool tool--icon" id="fullscreen-button" type="button" aria-label="แสดงเต็มจอ" title="เต็มจอ ( F )">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5" /></svg>
+          </button>
+        </nav>
+      </header>
+
+      <main class="stage" id="stage" tabindex="-1"></main>
+
+      <!-- มือถือแนวตั้ง: สไลด์ 16:9 เล็กเกินอ่าน จึงพาไปที่สิ่งที่ใช้จริงบนมือถือแทน -->
+      <div class="portraitnote" id="portrait-note">
+        <p class="portraitnote__kicker">บนมือถือ</p>
+        <h2>สไลด์ออกแบบมาสำหรับจอใหญ่</h2>
+        <p class="portraitnote__text">
+          หมุนเครื่องเป็นแนวนอนเพื่อดูสไลด์ — หรือใช้สองอย่างนี้เลย ซึ่งเป็นสิ่งที่ต้องใช้ตอน workshop
+        </p>
+        <div class="portraitnote__actions">
+          <button class="portraitnote__btn portraitnote__btn--primary" type="button" id="portrait-library">
+            คลัง Prompt ทุกสายงาน
+          </button>
+          <button class="portraitnote__btn" type="button" id="portrait-toc">สารบัญสไลด์</button>
+        </div>
+      </div>
+
+      <footer class="controlbar">
+        <div class="progress" aria-hidden="true"><span class="progress__fill" id="progress-fill"></span></div>
+        <p class="controlbar__hint" id="control-hint">← → เปลี่ยนสไลด์ · P ดู Prompt · G ดูคู่มือ · +/− ขยายตัวอักษร</p>
+        <div class="controlbar__nav">
+          <button class="navbtn" id="prev-button" type="button" aria-label="สไลด์ก่อนหน้า">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7" /></svg><span>ก่อนหน้า</span>
+          </button>
+          <button class="navbtn navbtn--next" id="next-button" type="button" aria-label="สไลด์ถัดไป">
+            <span>ถัดไป</span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7" /></svg>
+          </button>
+        </div>
+      </footer>
+    </div>
+
+    <aside class="drawer drawer--toc" id="toc" role="dialog" aria-modal="true" aria-labelledby="toc-title" hidden>
+      <div class="drawer__head">
+        <div>
+          <p class="kicker kicker--onDark">CONTENTS</p>
+          <h2 id="toc-title">สารบัญ</h2>
+        </div>
+        <button class="closebtn" id="toc-close" type="button" aria-label="ปิดสารบัญ">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19" /></svg>
+        </button>
+      </div>
+      <div class="drawer__body" id="toc-list"></div>
+    </aside>
+
+    <section class="modal" id="prompt-modal" role="dialog" aria-modal="true" aria-labelledby="prompt-title" hidden>
+      <button class="modal__backdrop" id="prompt-backdrop" type="button" tabindex="-1" aria-hidden="true"></button>
+      <div class="modal__panel">
+        <div class="modal__head">
+          <div>
+            <p class="kicker" id="prompt-kicker">PROMPT TEMPLATES</p>
+            <h2 id="prompt-title">Prompt พร้อมใช้</h2>
+          </div>
+          <button class="closebtn closebtn--dark" id="prompt-close" type="button" aria-label="ปิด">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19" /></svg>
+          </button>
+        </div>
+        <div class="modal__body" id="prompt-body"></div>
+      </div>
+    </section>
+
+    <section class="modal" id="guide-modal" role="dialog" aria-modal="true" aria-labelledby="guide-title" hidden>
+      <button class="modal__backdrop" id="guide-backdrop" type="button" tabindex="-1" aria-hidden="true"></button>
+      <div class="modal__panel">
+        <div class="modal__head">
+          <div>
+            <p class="kicker" id="guide-kicker">QUICK GUIDE</p>
+            <h2 id="guide-title">คู่มือพร้อมใช้</h2>
+          </div>
+          <button class="closebtn closebtn--dark" id="guide-close" type="button" aria-label="ปิด">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19" /></svg>
+          </button>
+        </div>
+        <div class="modal__body" id="guide-body"></div>
+      </div>
+    </section>
+
+    <section class="modal modal--wide" id="library-modal" role="dialog" aria-modal="true" aria-labelledby="library-title" hidden>
+      <button class="modal__backdrop" id="library-backdrop" type="button" tabindex="-1" aria-hidden="true"></button>
+      <div class="modal__panel">
+        <div class="modal__head">
+          <div>
+            <p class="kicker">PROMPT LIBRARY · ทุกสายงาน</p>
+            <h2 id="library-title">คลัง Prompt template</h2>
+          </div>
+          <button class="closebtn closebtn--dark" id="library-close" type="button" aria-label="ปิด">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19" /></svg>
+          </button>
+        </div>
+        <div class="modal__tools">
+          <label class="searchfield">
+            <span class="sr-only">ค้นหา prompt</span>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6" /><path d="m16 16 5 5" /></svg>
+            <input id="library-search" type="search" placeholder="ค้นหา เช่น VO, term sheet, working paper, risk register…" autocomplete="off" />
+          </label>
+          <div class="chipfilter" id="library-filter" role="group" aria-label="กรองตามสายงาน"></div>
+        </div>
+        <p class="modal__meta" id="library-count"></p>
+        <div class="modal__body" id="library-body"></div>
+      </div>
+    </section>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden>คัดลอกแล้ว</div>
+  </body>
+</html>
